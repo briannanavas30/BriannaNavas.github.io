@@ -1,0 +1,238 @@
+$neutral1: #010E21;
+$neutral2: #131237;
+$primary: #ffffff;
+$secondary: #F20A8E;
+$tertiary: #00D5F4;
+
+$h1text: 100px;
+
+/* General Stylings */
+*,*::before, *::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: $neutral1;
+}
+
+// @mixin medium-width {
+//     // grid-template-columns: 1fr;
+//     background-color: rgb(255, 255, 147);
+// }
+
+// @mixin small-width{
+//     // grid-template-columns: 1fr;
+//     background-color: pink;
+// }
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Space Mono', monospace;
+
+// h1.title{
+//     font-size: 64pt;
+//     color: #541d8d;
+//     background-color: #e0e7ff;
+//     border-color: #541d8d;
+//     border-style: dashed;
+//     border-width: 4px;
+//     font-weight: bold;
+//     text-align: center;
+
+//     @media only screen and (max-width: 500px){
+//         @include small-width();
+//         font-size: xx-large;
+//     }
+//     @media only screen and (max-width:800px) and (min-width: 501px){
+//         @include medium-width;
+//         font-size: 42pt;
+//     }
+// }
+div.homepage_container{
+    align-items: center;
+    justify-content: center;
+        position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+div.otherpage_container{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    // transform: translate(0, -50%);
+}
+
+div.about_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 48px;
+    gap: 40px;
+
+    margin: auto;
+    width: 70%;
+}
+
+div.introAbout{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+}
+
+h1{
+    font-family: 'Inter', sans-serif;
+    color: $primary;
+    font-size: $h1text;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121px;
+    margin: 0px;
+}
+
+h2{
+    font-family: 'Space Mono', monospace;
+    color: $secondary;
+    margin: 0px;
+}
+
+p{
+    font-family: 'Space Mono', monospace;
+    color: $primary;
+    margin: 0px;
+}
+
+.emphasis{
+    color: $secondary;
+}
+
+footer{
+    text-align: center;
+    background-color: $neutral2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+p.footerText{
+    color: $primary;
+}
+
+button{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: $primary;
+    color: $secondary;
+    border-radius: 20px;
+    padding: 12px 24px;
+    gap: 10px;
+}
+
+button:hover{
+    background-color: $secondary;
+    color: $primary;
+}
+
+img.headshot{
+    width: 360px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    // /* centering images */
+    // text-align: center;
+    // margin: 48px, 48px;
+}
+
+.navbar{
+    position: fixed;
+    background-color: $neutral2;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    // padding: 10px;
+    box-sizing: border-box;
+    // height: 10%;
+    
+}
+
+.navlogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px 64px;
+    gap: 6px;
+}
+
+.circle1{
+    width: 36px;
+    height: 36px;
+    border-radius: 25px;
+    background: $secondary;
+}
+.circle2{
+    width: 36px;
+    height: 36px;
+    border-radius: 25px;
+    background: $tertiary;
+}
+
+.logourl{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    text-decoration: none;
+
+    color: $primary;
+}
+
+.navlinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 60px;
+    padding: 24px 64px;
+}
+
+a.navlink{
+    font-family: 'Space Mono', monospace;
+    color: $primary;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+a.navlink:hover{
+    color: $tertiary;
+}
+
+a.activenavlink{
+    font-family: 'Space Mono', monospace;
+    color: $secondary;
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    @media only screen and (max-width: 500px){
+        grid-template-columns: 1fr;
+    }
+    @media only screen and (max-width:800px) and (min-width: 501px){
+        grid-template-columns: 1fr;
+    }
+}
