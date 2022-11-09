@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <h1>Boilerplate Template</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non laboriosam praesentium eligendi, 
-    repellendus rem ratione temporibus quibusdam delectus ad reprehenderit autem neque corrupti beatae voluptates,
-    fugiat soluta ducimus tempore laborum?</p>
 
-    <div class = "container">
-        <div class="itemA">
-            <h1>Lorem Ipsum</h1>
-        </div>
-        <div class="itemB">
-            <p>Lorem ipsum dolor sit, amet consectetur
-                 adipisicing elit. Incidunt molestiae 
-                 error, velit repellat odio commodi 
-                 dicta earum sunt eius. Veniam voluptatum 
-                 ab ipsam. Nam esse quibusdam corporis 
-                 quisquam cupiditate excepturi.</p>
+    <!-- Links all styling to a separate css file-->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Font Links -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+
+    <title>Briannna's Webpage</title>
+</head>
+
+<div class="navbar">
+    <div class = "navlogo">
+        <!-- circles -->
+        <div class = "circle1"></div>
+        <div class = "circle2"></div>
+        <div class = "name">
+            <a class="logourl" href = "index.html">Brianna Navas</a>
         </div>
     </div>
-    
+    <div class = "navlinks">
+        <a class="activenavlink" href="index.html">About</a>
+        <a class="navlink" href="work.html">Work</a>
+        <a class="navlink" href="play.html">Play</a>
+    </div>
+</div>
+
+<body>
+    <div class = "homepage_container">
+        <div class = "about_container">
+            <div class = "introAbout">
+                <h2>// About</h2>
+                <h1>Howdy!</h1>
+                <p>My name is Brianna Navas. I'm a Senior <span class='emphasis'> Computer Science major </span> at <span class='emphasis'>Texas A&M University</span> with an emphasis in Visualization.</p>
+
+                <p>I am passionate about <span class='emphasis'>User Experience</span>. While studying <span class='emphasis'>programming, game development, and visual design</span>, 
+                    I've become fascinated with user-oriented design techniques and passionate about creating products which 
+                    improve our <span class='emphasis'>quality of life</span>.
+                </p> 
+                <p>I'm <span class='emphasis'>ready to work</span> and interested in learning about opportunities in the 
+                    technology and game design industry.</p>
+                <button>Download resume</button>
+            </div>
+            <!-- image goes in this container too -->
+            <img class = "headshot" src="headshot.png" alt="A professional headshot of Brianna Navas">
+        </div>
+    </div>
 </body>
+
+<footer>
+    <p class = "footerText">512-825-1295</p>
+    <p class = "footerText">brianna.navas30@tamu.edu</p>
+</footer>
+
 </html>
