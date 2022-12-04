@@ -3,6 +3,7 @@ $neutral2: #131237;
 $primary: #ffffff;
 $secondary: #F20A8E;
 $tertiary: #00D5F4;
+$mobile: 430px;
 
 $h1text: 100px;
 
@@ -20,57 +21,18 @@ body{
     display: flex;
     flex-direction: column;
 
+    @media only screen and (max-width: $mobile){
+        padding-top: 96px;
+    }
 }
 
-// @mixin medium-width {
-//     // grid-template-columns: 1fr;
-//     background-color: rgb(255, 255, 147);
-// }
-
-// @mixin small-width{
-//     // grid-template-columns: 1fr;
-//     background-color: pink;
-// }
-
-// font-family: 'Inter', sans-serif;
-// font-family: 'Space Mono', monospace;
-
-// h1.title{
-//     font-size: 64pt;
-//     color: #541d8d;
-//     background-color: #e0e7ff;
-//     border-color: #541d8d;
-//     border-style: dashed;
-//     border-width: 4px;
-//     font-weight: bold;
-//     text-align: center;
-
-//     @media only screen and (max-width: 500px){
-//         @include small-width();
-//         font-size: xx-large;
-//     }
-//     @media only screen and (max-width:800px) and (min-width: 501px){
-//         @include medium-width;
-//         font-size: 42pt;
-//     }
-// }
 div.homepage_container{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     flex: 1;
-    // position: absolute;
-    // top: 50%;
-    // transform: translate(0, -50%);
 }
-// div.otherpage_container{
-//     align-items: center;
-//     justify-content: center;
-//     position: absolute;
-//     top: 10%;
-//     // transform: translate(0, -50%);
-// }
 
 div.about_container{
     display: flex;
@@ -81,6 +43,14 @@ div.about_container{
 
     margin: auto;
     width: 70%;
+
+    @media only screen and (max-width: $mobile){
+        padding: 0px;
+        margin: 0px;
+        width:fit-content;
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
 }
 
 div.introAbout{
@@ -89,6 +59,9 @@ div.introAbout{
     align-items: flex-start;
     padding: 0px;
     gap: 16px;
+    @media only screen and (max-width: $mobile){
+        padding: 48px 32px;
+    }
 }
 
 h1{
@@ -99,6 +72,10 @@ h1{
     font-weight: 600;
     line-height: 121px;
     margin: 0px;
+    @media only screen and (max-width: $mobile){
+        font-size: 48px;
+        line-height: 60px;
+    }
 }
 
 h2{
@@ -126,6 +103,7 @@ p{
     font-family: 'Space Mono', monospace;
     color: $tertiary;
     text-decoration: none;
+    font-size: 18px;
 }
 
 .link:hover{
@@ -139,9 +117,12 @@ p{
 footer{
     text-align: center;
     background-color: $neutral2;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
+    @media only screen and (max-width: $mobile){
+        position: relative;
+    }
 }
 
 p.footerText{
@@ -169,10 +150,10 @@ img.headshot{
     width: 360px;
     height: auto;
     border-radius: 50%;
-    border: 4px solid #FFFFFF;
-    // /* centering images */
-    // text-align: center;
-    // margin: 48px, 48px;
+    border: 4px solid $primary;
+    @media only screen and (max-width: $mobile){
+        margin: 16px;
+    }
 }
 
 .navbar{
@@ -180,13 +161,31 @@ img.headshot{
     position: fixed;
     background-color: $neutral2;
     display: flex;
-    // flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    // padding: 10px;
     box-sizing: border-box;
-    // height: 10%;
+    z-index: 100;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media only screen and (max-width: $mobile){
+        display: none;
+    }
     
+}
+
+.mobileNavbar{
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: $neutral2;
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media only screen and (max-width: $mobile){
+        display: flex;
+    }
 }
 
 .navlogo{
@@ -195,6 +194,9 @@ img.headshot{
     align-items: center;
     padding: 24px 64px;
     gap: 6px;
+    @media only screen and (max-width: $mobile){
+        padding: 24px 32px;
+    }
 }
 
 .circle1{
@@ -202,12 +204,18 @@ img.headshot{
     height: 36px;
     border-radius: 25px;
     background: $secondary;
+    @media only screen and (max-width: $mobile){
+        display: none;
+    }
 }
 .circle2{
     width: 36px;
     height: 36px;
     border-radius: 25px;
     background: $tertiary;
+    @media only screen and (max-width: $mobile){
+        display: none;
+    }
 }
 
 .logourl{
@@ -228,6 +236,10 @@ img.headshot{
     align-items: center;
     gap: 60px;
     padding: 24px 64px;
+    // removes the rest of the navbar for a mobile size
+    @media only screen and (max-width: $mobile){
+        display: none;
+    }
 }
 
 a.navlink{
@@ -253,6 +265,84 @@ a.activenavlink{
     line-height: 36px;
 }
 
+// mobile menu stuff start
+
+.hamburgerIcon{
+    margin: 0px 32px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    align-self: center;
+
+    width: 32px;
+    height: 32px;
+    
+    // @media only screen and (max-width: $mobile){
+    //     display: block;
+    // }
+}
+
+.bar1 {
+    width: 35px;
+    height: 4px;
+    background-color: $primary;
+    transition: 0.4s;
+}
+.bar2 {
+    width: 35px;
+    height: 4px;
+    background-color: $primary;
+    transition: 0.4s;
+}
+.bar3 {
+    width: 35px;
+    height: 4px;
+    background-color: $primary;
+    transition: 0.4s;
+}
+
+.open .bar1{
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: translate(-6px, 14px) rotate(-45deg) ;
+}
+
+.open .bar2{
+    opacity: 0;
+}
+
+.open .bar3{
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: translate(-6px, -14px) rotate(45deg) ;
+}
+
+.open .mobileNavlinks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 48px;
+    gap: 48px;
+    
+    
+}
+
+.mobileNavlinks{
+    display: none;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    height: calc(100vh - 95px);
+    width: 100%;
+    background-color: $neutral1;
+    z-index: -100;
+}
+
+
+
+// mobile menu stuff end
+
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -273,6 +363,10 @@ a.activenavlink{
     // justify-content: center;
     padding: 48px;
     // gap: 48px;
+    @media only screen and (max-width: $mobile){
+        padding: 48px 32px 48px 32px;
+        gap: 48px;
+    }
 }
 
 // project card stuffs
@@ -287,23 +381,36 @@ a.activenavlink{
 
 .projectCard{
     background-color: $neutral2;
-    width: 1104px;
-    height: 370px;
+    // width: 1104px;
+    width: 70%;
+    // height: 370px;
     border-radius: 20px;
     display: flex;
-    // flex-direction: column;
     align-items: center;
     padding: 48px;
     gap: 48px;
+    // flex-direction: column;
+    flex-direction: row;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media only screen and (max-width: $mobile){
+        flex-direction: column;
+        padding: 24px;
+        width: 100%;
+        gap: 32px;
+    }
 
 }
 
 .projectCard_img{
-    width: 455px;
+    // width: 455px;
+    width: 50%;
     // height: 270px;
     height: auto;
     border-radius: 20px;
     border: 4px solid $primary;
+    @media only screen and (max-width: $mobile){
+        width: 100%;
+    }
 }
 
 .photoContainer{
@@ -311,6 +418,9 @@ a.activenavlink{
     gap: 16px;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width: $mobile){
+        flex-direction: column;
+    }
 }
 
 .photoContainer_column{
@@ -331,6 +441,9 @@ a.activenavlink{
     width: 300px;
     height: auto;
     border-radius: 20px;
+    @media only screen and (max-width: $mobile){
+        width: 366px;
+    }
 }
 
 .overlay {
